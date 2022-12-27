@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+		<title>Celsius to Fahrenheit Converter</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+    <style>
+        input {
+            font-size: 20px;
+            width: 230px;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 70px;
+            border-radius: 30px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            border: 1px solid black;
+            color: gray;
+            font-weight: lighter;
+            height: 100px;
+            width: 230px;
+            text-align: center;
+            padding-top: 60px;
+        }
+    </style>
+	<body>
+		<form>
+			<input id="celcius" type="text" placeholder="Enter number in C">
+		</form>
+
+		<button id="yell" type="button" name="button">convert</button>
+
+		<h2 id="placeOfConversion">Result in F</h2>
+
+		<script>
+            document.querySelector('#yell').addEventListener('click', convert)
+
+            function convert() {
+                // get the value of celcius 
+                let temp = document.querySelector('#celcius').value
+                // convert to fahrenheit
+                temp = temp * (9/5) + 32
+                // display result
+                document.querySelector('#placeOfConversion').innerText = temp
+            }
+        </script>
+	</body>
+</html>
